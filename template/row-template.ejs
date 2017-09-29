@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="video-row">
+    <div class="col-sm-6">
+      <div class="<%- isDir ? " folderIcon " : "fileIcon " %>">
+        <a class="video-title" href="<%- href %>">
+          <%= name %>
+          
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <%= sizeHumanReadable %>
+    </div>
+    <div class="col-sm-4">
+      <% if(!isDir) {%>
+        <div class="video-wrap">
+          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2]}'>
+            <% if(name.substr(-4)===".mp4") {%>
+              <source src="<%- href %>" type='video/mp4'>
+            <% } %>
+
+             <% if(name.substr(-5)===".webm") {%>
+               <source src="<%- href %>" type='video/webm'>
+             <% } %>
+          </video>
+        </div>
+        <% } %>
+    </div>
+
+  </div>
+</div>

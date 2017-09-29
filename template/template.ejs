@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <title>listing directory
+        <%= path %>
+    </title>
+    <%- options.injectHead %>
+
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/ftp.css">
+</head>
+
+<body>
+    
+    
+    <div class="container" id="main">
+
+        <div class="pathByComponents">
+            <% for(var i = 0; i < pathComponents.length; i++){
+            %>
+                <a href="<%= pathComponents[i].href %>">
+                    <%=pathComponents[i].name%>
+                </a>
+                <span>/</span>
+                <%
+        }%>
+        </div>
+        
+        <%- files.join('\n') %>
+
+    </div>
+
+        <script>
+            <%- options.injectJS %>
+        </script>
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="//vjs.zencdn.net/5.19/video.min.js"></script>
+        
+</body>
+
+</html>

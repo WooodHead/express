@@ -49,7 +49,7 @@ gulp.task('nodemon', function (cb) {
 gulp.task('browser-sync', ['nodemon', 'watch'], function () {
   browserSync.init(null, {
     proxy: "http://localhost:8080",
-    files: ['serve-index/**/*.*', 'public/**/*.*', 'views/**/*.*', 'controller/**/*.*', 'model/**/*.*', 'routes/**/.*.*', 'app/**/*.*'],
+    files: ['serve-index/**/*.*', 'public/**/*.*', 'views/**/*.*', 'controller/**/*.*', 'model/**/*.*', 'routes/**/.*.*', 'app/**/*.*','template/**/*.*'],
     // files: ['serve-index/**/*.*', 'public/**/*.*', 'views/**/*.*', 'controller/**/*.*', 'model/**/*.*', 'routes/**/.*.*', 'app/**/*.*'],
     browser: "google chrome",
     port: 7000,

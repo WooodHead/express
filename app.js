@@ -15,18 +15,64 @@ var users = require('./routes/users');
 var wordController = require('./controller/word.js');
 
 var serveIndex = require('serve-index')
+var serveIndexLight = require('serve-index-light')
+
+var ejs = require('ejs');
+var extname=require('extname');
 
 const models = path.join(__dirname, 'app/models');
+
+
+
 const port = process.env.PORT || 8080;
 const app = express();
 
 
 app.use(express.static("public"));
+app.locals.extname = extname;
+// app.use('/ftp', serveIndex(__dirname + '/public/ftp', {
+//   'icons': true,
+//   "view": "details"
+// }))
 
-app.use('/ftp', serveIndex(__dirname + '/public/ftp', {
-  'icons': true,
-  "view": "details"
-}))
+
+// app.use('/ftp', serveIndex(__dirname + '/public/ftp', {
+//   'icons': true,
+//   'view': 'details',
+//   'template': function (locals, callback) {
+//     console.log('locals', locals)
+//     var displaytIcons = locals.displayIcons;
+//     var directory = locals.directory;
+//     var fileList = locals.fileList;
+//     var path = locals.path;
+//     var style = locals.style;
+//     var viewName = locals.viewName;
+
+//     var error = '';
+//     htmlString = '<div>'+directory+'</div>' + ' ' + fileList.length + ' ' + path;
+//     callback(error, htmlString);
+//   },
+//   'stylesheet': path.join(__dirname,'public/css/ftp.css')
+// }));
+
+app.use('/ftp', serveIndexLight({
+  baseDir: 'public/ftp',
+  showHidden: false,
+  rowTemplateProcessor: function (fileInfo) {
+    if (!this.rowTemplateCompiled) {
+      var template = fs.readFileSync(path.join(__dirname, 'template/row-template.ejs'), 'utf8');
+      this.rowTemplateCompiled = ejs.compile(template);
+    }
+    return this.rowTemplateCompiled(fileInfo);
+  },
+  templateProcessor: function (fileInfo) {
+    if (!this.templateCompiled) {
+      var template = fs.readFileSync(path.join(__dirname, 'template/template.ejs'), 'utf8');
+      this.templateCompiled = ejs.compile(template);
+    }
+    return this.templateCompiled(fileInfo);
+  }
+}));
 
 
 // view engine setup

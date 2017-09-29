@@ -10,7 +10,9 @@
     "browser-sync": "^2.18.13",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "ejs": "^2.5.7",
     "express": "~4.15.2",
+    "extname": "^0.1.5",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
@@ -20,7 +22,8 @@
     "mongoose": "^4.11.8",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
-    "serve-index": "github:wooodhead/serve-index",
+    "serve-index": "^1.9.0",
+    "serve-index-light": "^1.1.2",
     "serve-static": "^1.12.3"
   }
 }
