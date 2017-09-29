@@ -56,7 +56,7 @@ app.locals.extname = extname;
 // }));
 
 app.use('/ftp', serveIndexLight({
-  baseDir: 'public/ftp',
+  baseDir: path.join(__dirname,'public/ftp'),
   showHidden: false,
   rowTemplateProcessor: function (fileInfo) {
     if (!this.rowTemplateCompiled) {
