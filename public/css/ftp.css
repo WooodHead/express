@@ -33,9 +33,21 @@
 
 .folderIcon:before {
   content: "~";
-  margin-right:5px;
+  margin-right: 5px;
 }
 
+.glyphicon {
+  font-size: 22px;
+}
+
+.play-button,
+.download-button {
+  margin-right: 10px;
+}
+
+.row{
+  margin-bottom:5px;
+}
 
 @media (max-width:768px) {
   #main .fileTableHeadAttribute,
