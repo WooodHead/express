@@ -23,7 +23,7 @@
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "serve-index": "^1.9.0",
-    "serve-index-light": "^1.1.2",
+    "serve-index-light": "github:wooodhead/serve-index-light",
     "serve-static": "^1.12.3"
   }
 }

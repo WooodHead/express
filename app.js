@@ -15,7 +15,7 @@ var users = require('./routes/users');
 var wordController = require('./controller/word.js');
 
 var serveIndex = require('serve-index')
-var serveIndexLight = require('serve-index-light')
+var serveIndexLight = require('./serve-index-light')
 
 var ejs = require('ejs');
 var extname=require('extname');
