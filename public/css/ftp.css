@@ -3,7 +3,7 @@
   display: none;
 }
 
-.video-wrap {
+.video-wrap.active {
   width: 320px;
   height: 180px;
   margin: 0 auto;
