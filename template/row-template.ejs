@@ -14,7 +14,7 @@
     <div class="col-sm-4">
       <% if(!isDir && (name.substr(-4)===".mp4" || name.substr(-5)===".webm")) {%>
         <div class="video-wrap">
-          <video id="my_video_<%- index %>" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2]}'>
+          <video id="my_video_<%- index %>" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.25, 1.5, 1.75, 2]}'>
           <!-- <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto"> -->
             <% if(name.substr(-4)===".mp4") {%>
               <source src="<%- href %>" type='video/mp4'>
