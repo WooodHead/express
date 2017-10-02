@@ -8,11 +8,7 @@
         </a>
       </div>
     </div>
-    <div class="col col-sm-2">
-      <% if(!isDir && (name.substr(-4)===".mp4" || name.substr(-5)===".webm")) {%>
-        <a href="<%- href  %>" class="btn btn-primary download-button" download><span class="glyphicon glyphicon-download"></span></a>
-        <% } %>
-        
+    <div class="col col-sm-2">  
         <%= sizeHumanReadable %>
     </div>
     <div class="col col-sm-4">
